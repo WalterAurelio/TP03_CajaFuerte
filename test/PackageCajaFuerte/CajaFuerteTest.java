@@ -84,4 +84,24 @@ public class CajaFuerteTest {
         // Contrastacion
         Assert.assertEquals(valorEsperado, valorObtenido);
     }
+
+    @Test
+    public void alAbrirUnaCajaFuerteConLaClaveDeberiaAbrirse(){ 
+        // Preparación
+        CajaFuerte miCajaFuerte= dadoQueExisteUnaCajaFuerte();
+        Boolean valorEsperado= Boolean.TRUE;
+        Boolean valorObtenido;
+        // Ejecución
+        miCajaFuerte.abrirConLaLlave();
+        miCajaFuerte.configurarCodigoDeApertura(789);
+        miCajaFuerte. cerrarConCodigo(789);
+        miCajaFuerte.comprobarCodigo(789);
+        valorObtenido= miCajaFuerte.estaLaPuertaAbierta();
+        // Contrastación
+        Assert.assertEquals(valorEsperado, valorObtenido); 
+    }
+    
+    private CajaFuerte dadoQueExisteUnaCajaFuerte(){ 
+	    return new CajaFuerte();
+    }
 }

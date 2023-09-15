@@ -28,8 +28,12 @@ public class CajaFuerte {
         }
     }
 
-    public void abrirConCodigo(Integer unaClave) {
-        if (unaClave.equals(codigoApertura)) {
+    public void abrirConLaLlave() {
+	    this.estaAbierta = Boolean.TRUE;
+    }
+
+    public void comprobarCodigo(Integer unaClave) {
+        if (this.estaAbierta.equals(Boolean.FALSE) && unaClave.equals(codigoApertura)) {
             this.estaAbierta = Boolean.TRUE;
             contadorApertura = 0;
         }
@@ -42,19 +46,4 @@ public class CajaFuerte {
     public void configurarCodigoDeCierre(Integer unaClave) {
         this.codigoCierre = unaClave;
     }
-
-    /* public void solicitarNuevoCodigoApertura() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese una nueva contraseña: ");
-        codigoApertura = scanner.nextInt();
-    } */
-
-    /* public void cerrar2(Integer unaClave) {
-        if (contadorCierre == 1) {
-            cerrarConCodigo(1234);
-        }
-        else {
-            cerrarConCodigo(unaClave);
-        }
-    } */
 }
