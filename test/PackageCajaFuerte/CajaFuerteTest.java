@@ -15,12 +15,12 @@ public class CajaFuerteTest {
     /* @Test
     public void alCrearUnaCajaFuerteLaPuertaEstaAbierta() {
         // Preparacion
-        CajaFuerte caja1 = new CajaFuerte();
+        CajaFuerte miCaja = new CajaFuerte();
         Boolean valorEsperado = Boolean.TRUE;
         Boolean valorObtenido;
 
         // Ejecucion
-        valorObtenido = caja1.estaLaPuertaAbierta();
+        valorObtenido = miCaja.estaLaPuertaAbierta();
 
         // Contrastacion
         Assert.assertEquals(valorEsperado, valorObtenido);
@@ -29,27 +29,57 @@ public class CajaFuerteTest {
     /* @Test
     public void alCrearUnaCajaFuerteSeCreaConElCodigoDeCierre1234() {
         // Preparacion
-        CajaFuerte caja2 = unaCajaFuerte();
+        CajaFuerte miCaja = unaCajaFuerte();
         Integer valorEsperado = 1234;
         Integer valorObtenido;
         
         // Ejecucion
-        valorObtenido = caja2.codigoDeCierre();
+        valorObtenido = miCaja.codigoDeCierre();
+
+        // Contrastacion
+        Assert.assertEquals(valorEsperado, valorObtenido);
+    } */
+
+    /* @Test
+    public void alCrearCajaFuerteYCerrarlaConCodigoDeCierreDefaultPermaneceCerrada() {
+        // Preparacion
+        CajaFuerte miCaja = unaCajaFuerte();
+        Boolean valorEsperado = Boolean.FALSE;
+        Boolean valorObtenido;
+        
+        // Ejecucion
+        miCaja.cerrarConCodigo(1234);
+        valorObtenido = miCaja.estaLaPuertaAbierta();
+
+        // Contrastacion
+        Assert.assertEquals(valorEsperado, valorObtenido);
+    } */
+
+    /* @Test
+    public void alConfigurarUnCodigoDeAperturaEsteQuedaGuardado() {
+        // Preparacion
+        CajaFuerte miCaja = unaCajaFuerte();
+        Integer valorEsperado = 3282;
+        Integer valorObtenido;
+        
+        // Ejecucion
+        miCaja.configurarCodigoDeApertura(3282);
+        valorObtenido = miCaja.codigoDeApertura();
 
         // Contrastacion
         Assert.assertEquals(valorEsperado, valorObtenido);
     } */
 
     @Test
-    public void alCerrarCajaFuerteRecienCreadaEIngresarCodigoDeCierre1234PermaneceCerrada() {
+    public void alConfigurarUnCodigoDeCierreEsteQuedaGuardado() {
         // Preparacion
-        CajaFuerte caja3 = unaCajaFuerte();
-        Boolean valorEsperado = Boolean.TRUE;
-        Boolean valorObtenido;
-
+        CajaFuerte miCaja = unaCajaFuerte();
+        Integer valorEsperado = 2494;
+        Integer valorObtenido;
+        
         // Ejecucion
-        caja3.cerrar(1234);
-        valorObtenido = caja3.estaLaPuertaAbierta();
+        miCaja.configurarCodigoDeCierre(2494);
+        valorObtenido = miCaja.codigoDeCierre();
 
         // Contrastacion
         Assert.assertEquals(valorEsperado, valorObtenido);
